@@ -366,11 +366,11 @@ demo = {
     },
 
     initGoogleMaps: function() {
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var myLatlng = new google.maps.LatLng(37.4632524, -121.9214515);
         var mapOptions = {
             zoom: 13,
             center: myLatlng,
-            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+            scrollwheel: true, //we disable de scroll over the map, it is a really annoing when you scroll through page
             styles: [{
                 "featureType": "water",
                 "elementType": "geometry",
@@ -490,32 +490,36 @@ demo = {
         };
 
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
+        const mapicon = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
         var marker = new google.maps.Marker({
             position: myLatlng,
-            title: "Hello World!"
+            title: "350sq Network",
+            icon: mapicon
+
         });
 
         // To add the marker to the map, call setMap();
         marker.setMap(map);
+
+
     },
 
-    showNotification: function(from, align) {
-        color = Math.floor((Math.random() * 4) + 1);
+    //showNotification: function(from, align) {
+    //    color = Math.floor((Math.random() * 4) + 1);
 
-        $.notify({
-            icon: "nc-icon nc-app",
-            message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+    //    $.notify({
+    //        icon: "nc-icon nc-app",
+    //       message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
 
-        }, {
-            type: type[color],
-            timer: 8000,
-            placement: {
-                from: from,
-                align: align
-            }
-        });
-    }
+    //    }, {
+    //        type: type[color],
+    //        timer: 8000,
+    //        placement: {
+    //            from: from,
+    //            align: align
+    //        }
+    //    });
+    //}
 
 
 
