@@ -368,7 +368,7 @@ demo = {
     initGoogleMaps: function() {
         var myLatlng = new google.maps.LatLng(37.4632524, -121.9214515);
         var mapOptions = {
-            zoom: 13,
+            zoom: 15,
             center: myLatlng,
             scrollwheel: true, //we disable de scroll over the map, it is a really annoing when you scroll through page
             styles: [{
@@ -488,19 +488,31 @@ demo = {
                 }]
             }]
         };
+        const contentString = "Hello World";
 
+        const infowindow = new google.maps.InfoWindow({ content: contentString });
+
+        //MARKER CREATOR HERE
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        const mapicon = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+        const mapicon = "/static/assets/img/lightining.png";
+
         var marker = new google.maps.Marker({
-            position: myLatlng,
-            title: "350sq Network",
+            position: new google.maps.LatLng(37.4632524, -121.9214515),
+            title: "EFHQ01",
             icon: mapicon
 
         });
-
-        // To add the marker to the map, call setMap();
+        marker.addListener("click", () => {
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                    shouldFocus: false,
+                })
+            })
+            // To add the marker to the map, call setMap();
         marker.setMap(map);
 
+        //MARKER CREATOR END
 
     },
 
