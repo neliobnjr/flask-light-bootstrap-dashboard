@@ -1,7 +1,10 @@
 {% extends "layouts/base.html" %} {% block title %} Google Maps {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
+
 {% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
 <style>
     .sidebar1 {
         font-family: "Lato", sans-serif;
@@ -66,19 +69,20 @@
         }
     }
 </style>
-{% block content %}
+    
 
 <div class="map-container">
-
-    <div id="map"></div>
     <div id="mySidebar" class="sidebar1">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#">About</a>
+        <a id="unitName" href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
     </div>
+    <div id="map"></div>
+   
 </div>
+
 
 {% endblock content %}
 
@@ -102,19 +106,13 @@
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
     }
-
-    function myFunction() {
-        var x = document.getElementById("myDIV");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-
     function initMap() {
         const myLatlng = {
             lat: -25.363,
+            lng: 131.044
+        };
+        const myLatlng2 = {
+            lat: -26.363,
             lng: 131.044
         };
         const map = new google.maps.Map(document.getElementById("map"), {
@@ -126,22 +124,36 @@
             map,
             title: "UNIT",
         });
-
-        map.addListener("center_changed", () => {
+        const marker2 = new google.maps.Marker({
+            position: myLatlng2,
+            map,
+            title: "UNIT2",
+        });
+        //map.addListener("center_changed", () => {
             // 3 seconds after the center of the map has changed, pan back to the
             // marker.
             //window.setTimeout(() => {
             //   map.panTo(marker.getPosition());
             //}, 3000);
-        });
+        //});
         marker.addListener("click", () => {
+            document.getElementById("unitName").innerHTML= marker.title;
+            map.panTo(marker.getPosition());
             map.setZoom(8);
             openNav();
-            map.setCenter(marker.getPosition());
+            
         });
+        marker2.addListener("click", () => {
+            document.getElementById("unitName").innerHTML= marker2.title;
+            map.panTo(marker2.getPosition());
+            map.setZoom(8);
+            openNav();
+            
+        });
+       
     }
 
-    window.initMap = initMap;
+    window.initMap = initMap();
 </script>
 
 {% endblock javascripts %}
