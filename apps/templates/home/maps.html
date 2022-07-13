@@ -3,11 +3,9 @@
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 <style>
-    body {
-        font-family: "Lato", sans-serif;
-    }
-    
+
     .sidebar1 {
+        font-family: "Lato", sans-serif;
         height: 100%;
         width: 0;
         position: fixed;
@@ -61,10 +59,10 @@
     /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
     
     @media screen and (max-height: 450px) {
-        .sidebar {
+        .sidebar1 {
             padding-top: 15px;
         }
-        .sidebar a {
+        .sidebar1 a {
             font-size: 18px;
         }
     }
@@ -72,6 +70,8 @@
 {% block content %}
 
 <div class="map-container">
+   
+    <div id="map"></div>
     <div id="mySidebar" class="sidebar1">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="#">About</a>
@@ -79,7 +79,6 @@
         <a href="#">Clients</a>
         <a href="#">Contact</a>
     </div>
-    <div id="map"></div>
 </div>
 
 {% endblock content %}
@@ -90,11 +89,11 @@
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzeSIS3eGlG075uzdMq0_6SQSo99GUAMc"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    //$(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
-        demo.initGoogleMaps();
+    //    demo.initGoogleMaps();
 
-    });
+    //});
 </script>
 
 {% endblock javascripts %}
