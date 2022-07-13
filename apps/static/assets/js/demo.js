@@ -511,12 +511,12 @@ demo = {
 
         });
         marker.addListener("click", () => {
-                openNav();
-                infowindow.open({
-                    anchor: marker,
-                    map,
-                    shouldFocus: false,
-                })
+                openNav(),
+                    infowindow.open({
+                        anchor: marker,
+                        map,
+                        shouldFocus: false,
+                    })
             })
             // To add the marker to the map, call setMap();
         marker.setMap(map);
