@@ -364,7 +364,15 @@ demo = {
         // lbd.startAnimationForBarChart(emailsSubscriptionChart);
 
     },
+    openNav: function() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    },
 
+    closeNav: function() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    },
     initGoogleMaps: function() {
         var myLatlng = new google.maps.LatLng(37.4632524, -121.9214515);
         var mapOptions = {
