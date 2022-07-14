@@ -5,79 +5,25 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-<style>
-    .sidebar1 {
-        font-family: "Lato", sans-serif;
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
-    
-    .sidebar1 a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-    
-    .sidebar1 a:hover {
-        color: #f1f1f1;
-    }
-    
-    .sidebar1 .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-    
-    .openbtn {
-        font-size: 20px;
-        cursor: pointer;
-        background-color: #111;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-    }
-    
-    .openbtn:hover {
-        background-color: #444;
-    }
-    
-    #main {
-        transition: margin-left .5s;
-        padding: 16px;
-    }
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    
-    @media screen and (max-height: 450px) {
-        .sidebar1 {
-            padding-top: 15px;
-        }
-        .sidebar1 a {
-            font-size: 18px;
-        }
-    }
-</style>
-    
+<link rel="stylesheet" href="/static/assets/css/sidebarunits.css">    
 
 <div class="map-container">
     <div id="mySidebar" class="sidebar1">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a id="unitName" href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a id="unitName" >About</a>
+        <a id="SOC" href="#">Services</a>
+        <a id="IVTS" href="#">Services</a>
+        <a id="COORD" href="#">Services</a>
+        <!--<div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <a href='#'>hello</a>
+                </div>
+                <div class="card">
+                    <a href='#'>hello</a>
+                </div>
+            </div>
+        </div>-->
     </div>
     <div id="map"></div>
    
@@ -97,63 +43,8 @@
     //    demo.initGoogleMaps();
 
     //});
-    function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-    }
-    function initMap() {
-        const myLatlng = {
-            lat: -25.363,
-            lng: 131.044
-        };
-        const myLatlng2 = {
-            lat: -26.363,
-            lng: 131.044
-        };
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: myLatlng,
-        });
-        const marker = new google.maps.Marker({
-            position: myLatlng,
-            map,
-            title: "UNIT",
-        });
-        const marker2 = new google.maps.Marker({
-            position: myLatlng2,
-            map,
-            title: "UNIT2",
-        });
-        //map.addListener("center_changed", () => {
-            // 3 seconds after the center of the map has changed, pan back to the
-            // marker.
-            //window.setTimeout(() => {
-            //   map.panTo(marker.getPosition());
-            //}, 3000);
-        //});
-        marker.addListener("click", () => {
-            document.getElementById("unitName").innerHTML= marker.title;
-            map.panTo(marker.getPosition());
-            map.setZoom(8);
-            openNav();
-            
-        });
-        marker2.addListener("click", () => {
-            document.getElementById("unitName").innerHTML= marker2.title;
-            map.panTo(marker2.getPosition());
-            map.setZoom(8);
-            openNav();
-            
-        });
-       
-    }
-
-    window.initMap = initMap();
 </script>
-
+<script type="text/javascript" src="/static/assets/js/unitmaps.js">
+    
+</script>
 {% endblock javascripts %}

@@ -6,16 +6,23 @@ Tip 2: you can also add an image using data-image tag
 -->
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="/" class="simple-text">
+            <!--<a href="/" class="simple-text">
                 Reef
-            </a>
+            </a>-->
+            <img src="/static/assets/img/Reefwhite-sm.png" style="position:center"></img>
         </div>
         <ul class="nav">
             {% if current_user.is_authenticated %}
             <li class="nav-item nav-item {% if 'index' in segment %} active {% endif %}">
                 <a class="nav-link" href="/">
-                    <i class="nc-icon nc-chart-pie-35"></i>
+                    <i class="nc-icon nc-tv-2"></i>
                     <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="nav-item nav-item {% if 'maps' in segment %} active {% endif %}">
+                <a class="nav-link" href="/maps.html">
+                    <i class="nc-icon nc-pin-3"></i>
+                    <p>Units</p>
                 </a>
             </li>
             <li class="nav-item nav-item {% if 'user' in segment %} active {% endif %}">
@@ -30,36 +37,31 @@ Tip 2: you can also add an image using data-image tag
                     <p>Table List</p>
                 </a>
             </li>
-            <li class="nav-item nav-item {% if 'typography' in segment %} active {% endif %}">
+            <!--<li class="nav-item nav-item {% if 'typography' in segment %} active {% endif %}">
                 <a class="nav-link" href="/typography.html">
                     <i class="nc-icon nc-paper-2"></i>
                     <p>Typography</p>
                 </a>
-            </li>
+            </li>-->
             <li class="nav-item nav-item {% if 'icons' in segment %} active {% endif %}">
                 <a class="nav-link" href="/icons.html">
-                    <i class="nc-icon nc-atom"></i>
-                    <p>Icons</p>
+                    <i class="nc-icon nc-money-coins"></i>
+                    <p>Sales</p>
                 </a>
             </li>
-            <li class="nav-item nav-item {% if 'maps' in segment %} active {% endif %}">
-                <a class="nav-link" href="/maps.html">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>Maps</p>
-                </a>
-            </li>
-            <li class="nav-item nav-item {% if 'notif' in segment %} active {% endif %}">
+           
+            <!--<li class="nav-item nav-item {% if 'notif' in segment %} active {% endif %}">
                 <a class="nav-link" href="/notifications.html">
                     <i class="nc-icon nc-bell-55"></i>
                     <p>Notifications</p>
                 </a>
-            </li>
-            <li class="nav-item nav-item {% if '404' in segment %} active {% endif %}">
+            </li>-->
+            <!--<li class="nav-item nav-item {% if '404' in segment %} active {% endif %}">
                 <a class="nav-link" href="/page-404.html">
                     <i class="nc-icon nc-settings-gear-64"></i>
                     <p>Error 404</p>
                 </a>
-            </li>
+            </li>-->
             <li>
                 <a class="nav-link" href="{{ url_for('authentication_blueprint.logout') }}">
                     <i class="nc-icon nc-button-power"></i>
@@ -75,13 +77,13 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li> -->
             {% else %}
-            <li class="nav-item active">
+            <!--<li class="nav-item active">
                 <a class="nav-link active" target="_blank" 
                    href="#">
                     <i class="nc-icon nc-spaceship"></i>
                     <p>Register</p>
                 </a>
-            </li>
+            </li>-->
             {% endif %}
         </ul>
     </div>
