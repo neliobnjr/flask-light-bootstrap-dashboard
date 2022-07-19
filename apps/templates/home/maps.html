@@ -9,11 +9,12 @@
 
 <div class="map-container">
     <div id="mySidebar" class="sidebar1">
+        <div id="innerSidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a id="unitName" >About</a>
-        <a id="SOC" href="#">Services</a>
-        <a id="IVTS" href="#">Services</a>
-        <a id="COORD" href="#">Services</a>
+        <a href="#" id="unitName"></a>
+        <a id="SOC" href="#"></a>
+        <a id="IVTS" href="#"></a>
+        <a id="COORD" href="#"></a>
         <!--<div class="row">
             <div class="col-md-8">
                 <div class="card">
@@ -24,6 +25,7 @@
                 </div>
             </div>
         </div>-->
+    </div>
     </div>
     <div id="map"></div>
    
@@ -37,14 +39,14 @@
 
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzeSIS3eGlG075uzdMq0_6SQSo99GUAMc"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="/static/assets/js/unitmaps.js"></script>
+<script id="getjs" type="text/javascript">
     //$(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js
     //    demo.initGoogleMaps();
 
     //});
 </script>
-<script type="text/javascript" src="/static/assets/js/unitmaps.js">
-    
-</script>
+
+<script type="text/javascript" src="/static/assets/js/unitmaps.js"></script>
 {% endblock javascripts %}
