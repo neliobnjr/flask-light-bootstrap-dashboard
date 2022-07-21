@@ -35,9 +35,9 @@ def route_template(template):
         #     return render_template("home/" + template, segment=segment,info=info)
         # Detect the current page
         segment = get_segment(request)
-       
+        pagename = template
         # Serve the file (if exists) from app/templates/home/FILE.html
-        return render_template("home/" + template, segment=segment,info=info)
+        return render_template("home/" + template, segment=segment,info=info,pagename=pagename)
 
     except TemplateNotFound:
         return render_template('home/page-404.html'), 404
