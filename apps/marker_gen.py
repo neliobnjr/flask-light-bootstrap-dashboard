@@ -1,6 +1,6 @@
 import requests
 import random
-
+# Updated 210722
 #THIS FUNCTION LIBRARY IS TO COLLECT DATA FROM SERVER AND 
 # GENERATE JS SCRIPTS TO RENDER LIVE MAPS IN REEF
 def getParams():
